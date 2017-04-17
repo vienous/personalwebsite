@@ -1,6 +1,7 @@
 var moment = require('moment');
 
-exports.time = function(date,cb){
+exports.time = function(){
+	var date = moment().format("MMMM Do YYYY, h:mm:ss a")
 	var arr = date.split(' ');
 	var time = [];
 	time.push(arr[0]);
@@ -10,5 +11,5 @@ exports.time = function(date,cb){
 	time.push(arr[3]);
 	time.push(arr[4]);
 	// console.log(time);
-	cb(time);
+	return time;
 }
