@@ -8,3 +8,5 @@
 2.完成index页面
 
 3.mongo数据库
+
+4.异步改用Promise
