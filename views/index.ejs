@@ -36,9 +36,8 @@
 
 
 
-                        <h1>Nice responsive template for blogger.</h1>
-						This blogging template use bootstrap and html to create a very nice blogging page with great responsive. <br /> 
-						Here you can write a general notes about your blog.<br />
+                        <h1><%=result.introduce.large%></h1>
+						<%=result.introduce.small%>
 						<h2><strong>Who I am ? </strong></h2>
                         <i>I am kafusky </i>
 						
@@ -73,7 +72,7 @@
         <div class="row">
 
             <div class="col-md-8 ">
-                <% posts.forEach(function(post){ %> 
+                <% result.posts.forEach(function(post){ %> 
                     <div class="blog-post">
                     <h2><%=post.title%></h2>
                     <h4>Posted by <a href="#"><%=post.author%></a> on <%=post.date[0]%> <%=post.date[1]%><%=post.date[2]%> <%=post.date[3]%> <%=post.date[4]%> <%=post.date[5]%></h4>
@@ -109,14 +108,9 @@
 				<div class="row">
                 <ul class="list-group">
                     <li class="list-group-item"><strong>CATEGORIES</strong></li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <% result.categories.forEach(function(item){ %> 
+                      <li class="list-group-item"><%=item%></li>
+                    <%}); %>
                 </ul>
 				</div>
 				<div class="row">
@@ -124,10 +118,10 @@
 				<address> 
                     <ul class="list-group">
                     <li class="list-group-item"><strong>JiangSu XuZhou</strong></li>
-                    <li class="list-group-item"><span class="glyphicon glyphicon-home" title="address"> 江苏师范大学</span></li>
-                    <li class="list-group-item"><span class="glyphicon glyphicon-file" title="PostCode"> 111111</span></li>
-                    <li class="list-group-item"><span class="glyphicon glyphicon-phone" title="Mobile"> 1875166739</span><br/></li>
-                    <li class="list-group-item"><span class="glyphicon glyphicon-envelope" title="Email"> 631567366@qq.com</span></li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-home" title="address"> <%=result.information.school%></span></li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-file" title="PostCode"> <%=result.information.code%></span></li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-phone" title="Mobile"> <%=result.information.phone%></span><br/></li>
+                    <li class="list-group-item"><span class="glyphicon glyphicon-envelope" title="Email"> <%=result.information.email%></span></li>
                     
                 </address>
                 </ul>
